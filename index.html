@@ -18,6 +18,8 @@
         },
       }
     </script>
+    <!-- Heroicons untuk ikon -->
+    <script src="https://unpkg.com/@heroicons/vue@1.0.6"></script>
     <script src="https://unpkg.com/htmx.org@1.9.0"></script>
 </head>
 <body>
@@ -25,7 +27,13 @@
     <nav class="navbar bg-base-100 shadow-lg fixed top-0 z-50">
         <div class="container mx-auto">
             <div class="navbar-start">
-                <a class="text-3xl font-bold text-primary" href="#">Portfolio</a>
+                <a class="text-3xl font-bold text-primary flex items-center" href="#">
+                    <!-- Heroicon Home -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h4l-4 4m4-4v6h-4m-5-6h4l-4 4m-4-4v6h4" />
+                    </svg>
+                    Portfolio
+                </a>
             </div>
             <div class="navbar-end hidden md:flex">
                 <ul class="menu menu-horizontal p-0">
@@ -55,7 +63,13 @@
                 <div class="card shadow-lg">
                     <figure><img src="project1-thumbnail.jpg" alt="Project 1"></figure>
                     <div class="card-body">
-                        <h3 class="card-title">Project 1</h3>
+                        <h3 class="card-title flex items-center">
+                            <!-- Heroicon Code -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l7-7 7 7M5 12v6a2 2 0 002 2h3m6 0h3a2 2 0 002-2v-6M9 21h6" />
+                            </svg>
+                            Project 1
+                        </h3>
                         <p>A short description of project 1.</p>
                         <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
@@ -63,7 +77,13 @@
                 <div class="card shadow-lg">
                     <figure><img src="project2-thumbnail.jpg" alt="Project 2"></figure>
                     <div class="card-body">
-                        <h3 class="card-title">Project 2</h3>
+                        <h3 class="card-title flex items-center">
+                            <!-- Heroicon Code -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-4 0-6 2-6 6h12c0-4-2-6-6-6z" />
+                            </svg>
+                            Project 2
+                        </h3>
                         <p>A short description of project 2.</p>
                         <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
@@ -71,7 +91,13 @@
                 <div class="card shadow-lg">
                     <figure><img src="project3-thumbnail.jpg" alt="Project 3"></figure>
                     <div class="card-body">
-                        <h3 class="card-title">Project 3</h3>
+                        <h3 class="card-title flex items-center">
+                            <!-- Heroicon Star -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.5 12L12 5l6.5 7H18l-6 9-6-9h-.5z" />
+                            </svg>
+                            Project 3
+                        </h3>
                         <p>A short description of project 3.</p>
                         <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
@@ -87,16 +113,40 @@
             <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
-                    <h4 class="text-xl font-bold">HTML</h4>
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <!-- Heroicon HTML -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 3v18l8 3 8-3V3l-8-2-8 2zm10 2h2v9h-2V5zm-4 2h2v7H8V7zm10 0h2v7h-2V7z" />
+                        </svg>
+                        HTML
+                    </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
-                    <h4 class="text-xl font-bold">CSS</h4>
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <!-- Heroicon CSS -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 3v18l8 3 8-3V3l-8-2-8 2zm6 7h2v7H8v-7zm4 2h2v5h-2v-5z" />
+                        </svg>
+                        CSS
+                    </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
-                    <h4 class="text-xl font-bold">JavaScript</h4>
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <!-- Heroicon JavaScript -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h8v2H4v-2z" />
+                        </svg>
+                        JavaScript
+                    </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
-                    <h4 class="text-xl font-bold">Python</h4>
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <!-- Heroicon Python -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 9v3h6v6h8v-6h6V9h-6V5H8v4H2z" />
+                        </svg>
+                        Python
+                    </h4>
                 </div>
             </div>
         </section>
@@ -105,7 +155,13 @@
         <section id="contact" class="portfolio-section text-center my-16">
             <h2 class="text-4xl font-bold">Contact</h2>
             <p class="mt-4">Feel free to reach out to me via email at <a href="mailto:your.email@example.com" class="link link-primary">your.email@example.com</a>.</p>
-            <a href="mailto:your.email@example.com" class="btn btn-primary mt-6">Contact Me</a>
+            <a href="mailto:your.email@example.com" class="btn btn-primary mt-6">
+                <!-- Heroicon Mail -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8l-4 4-4-4" />
+                </svg>
+                Contact Me
+            </a>
         </section>
     </div>
 
