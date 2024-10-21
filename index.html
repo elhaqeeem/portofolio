@@ -1,102 +1,176 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark"> <!-- Aktifkan tema dark -->
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Developer Portfolio</title>
 
-    <!-- Tambahkan Tailwind CSS dan DaisyUI -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {},
-        },
-        plugins: [daisyui],
-        daisyui: {
-          themes: ["dark"],
-        },
-      }
-    </script>
+    <!-- Tambahkan Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Tambahkan DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+    <!-- Konfigurasi Tema -->
+    <style>
+        .animated-text {
+            display: inline-block; /* Memastikan teks dapat diatur per karakter */
+        }
+
+        .letter {
+            display: inline-block; /* Agar setiap huruf dapat diatur secara individual */
+            opacity: 0; /* Mulai dengan opacity 0 */
+            transform: translateY(20px); /* Mulai sedikit lebih rendah */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk efek */
+        }
+
+        /* Untuk memusatkan teks */
+        .text-center {
+            text-align: center; /* Memusatkan teks */
+        }
+        
+        .max-w-md {
+            max-width: 600px; /* Atur lebar maksimum sesuai kebutuhan */
+            margin: 0 auto; /* Memusatkan div secara horizontal */
+            padding: 20px; /* Menambahkan padding untuk estetika */
+        }
+
+        .text-accent {
+            color: #4892d3; /* Mengatur warna teks aksen (ubah sesuai kebutuhan) */
+        }
+    </style>
+
     <!-- Heroicons untuk ikon -->
-    <script src="https://unpkg.com/@heroicons/vue@1.0.6"></script>
     <script src="https://unpkg.com/htmx.org@1.9.0"></script>
 </head>
+
 <body>
     <!-- Sticky Navbar -->
-    <nav class="navbar sticky top-0 z-50 bg-base-100 shadow-lg">
-        <div class="container mx-auto">
+    <nav class="navbar sticky top-0 z-30 bg-neutral">
+        <div class="container mx-auto flex items-center justify-between">
             <div class="navbar-start">
-                <a class="text-3xl font-bold text-primary flex items-center" href="#">
+                <a class="text-3xl font-bold text-accent flex items-center" href="#">
                     <!-- Heroicon Home -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h4l-4 4m4-4v6h-4m-5-6h4l-4 4m-4-4v6h4" />
-                    </svg>
+                    <img src="assets/letter-e.png" alt="Logo" width="30">
                     Portfolio
                 </a>
             </div>
-            <div class="navbar-end hidden md:flex">
-                <ul class="menu menu-horizontal p-0">
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="navbar-end lg:hidden">
+                <button id="menu-toggle" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menu Links for Large Screens -->
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal flex items-center space-x-4">
                     <li><a href="#projects" class="btn btn-ghost">Projects</a></li>
                     <li><a href="#skills" class="btn btn-ghost">Skills</a></li>
                     <li><a href="#contact" class="btn btn-ghost">Contact</a></li>
                 </ul>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden">
+            <ul class="menu menu-vertical p-2 space-y-4">
+                <li><a href="#projects" class="btn btn-ghost">Projects</a></li>
+                <li><a href="#skills" class="btn btn-ghost">Skills</a></li>
+                <li><a href="#contact" class="btn btn-ghost">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+
+    <!-- JavaScript for toggling the mobile menu -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+
+
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 mt-24">
         <!-- Hero Section -->
-        <section class="hero bg-primary text-primary-content py-16 rounded-lg text-center">
-            <div class="hero-content">
-                <h1 class="text-5xl font-bold">Hello, I'm <span class="text-accent">Your Name</span></h1>
-                <p class="text-xl mt-4">A passionate web developer specialized in building amazing websites and web applications.</p>
-                <a href="#projects" class="btn btn-accent mt-6">See My Work</a>
+
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Hello, I'm <span class="text-accent animated-text">Lukmanul&nbsp;Hakim</span></h1>
+                    <p class="py-6">
+                        A passionate web developer specialized in building amazing websites and web applications.
+                    </p>
+                    <a href="#projects" class="btn btn-accent mt-6">See My Work</a>
+                </div>
             </div>
-        </section>
+            <!-- Embed the snake SVG with transparency -->
+            <div class="mt-12">
+                <img src="https://raw.githubusercontent.com/shahradelahi/shahradelahi/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only"
+                    alt="GitHub Contribution Snake" class="mx-auto" width="5000" style="opacity: 0.2;">
+            </div>
+        </div>
+
+
 
         <!-- Projects Section -->
         <section id="projects" class="portfolio-section my-16">
-            <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="card shadow-lg">
-                    <figure><img src="project1-thumbnail.jpg" alt="Project 1"></figure>
+                    <figure><img src="assets/3d-model.png" width="100" alt="Project 1"></figure>
                     <div class="card-body">
                         <h3 class="card-title flex items-center">
                             <!-- Heroicon Code -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l7-7 7 7M5 12v6a2 2 0 002 2h3m6 0h3a2 2 0 002-2v-6M9 21h6" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 12l7-7 7 7M5 12v6a2 2 0 002 2h3m6 0h3a2 2 0 002-2v-6M9 21h6" />
                             </svg>
-                            Project 1
+                            Learning Management System
                         </h3>
                         <p>A short description of project 1.</p>
                         <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="card shadow-lg">
-                    <figure><img src="project2-thumbnail.jpg" alt="Project 2"></figure>
+                    <figure><img src="assets/3d-model.png" width="100" alt="Project 2"></figure>
                     <div class="card-body">
                         <h3 class="card-title flex items-center">
                             <!-- Heroicon Code -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-4 0-6 2-6 6h12c0-4-2-6-6-6z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-4 0-6 2-6 6h12c0-4-2-6-6-6z" />
                             </svg>
-                            Project 2
+                            Sipmonas
                         </h3>
                         <p>A short description of project 2.</p>
                         <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="card shadow-lg">
-                    <figure><img src="project3-thumbnail.jpg" alt="Project 3"></figure>
+                    <figure><img src="assets/3d-model.png" width="100" alt="Project 3"></figure>
                     <div class="card-body">
                         <h3 class="card-title flex items-center">
                             <!-- Heroicon Star -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.5 12L12 5l6.5 7H18l-6 9-6-9h-.5z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5.5 12L12 5l6.5 7H18l-6 9-6-9h-.5z" />
                             </svg>
-                            Project 3
+                            Siap
                         </h3>
                         <p>A short description of project 3.</p>
                         <a href="#projectDetails" class="btn btn-primary">Learn More</a>
@@ -110,64 +184,160 @@
 
         <!-- Skills Section -->
         <section id="skills" class="portfolio-section my-16">
-            <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-8 gap-8 text-center">
+
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <!-- Heroicon HTML -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 3v18l8 3 8-3V3l-8-2-8 2zm10 2h2v9h-2V5zm-4 2h2v7H8V7zm10 0h2v7h-2V7z" />
-                        </svg>
-                        HTML
+                        <!-- Icon HTML -->
+                        <img src="assets/icons8-react-js-500.png" alt="HTML" width="50">
+                    </h4>
+                </div>
+
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-php-500.png" alt="Social Media" width="50">
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <!-- Heroicon CSS -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 3v18l8 3 8-3V3l-8-2-8 2zm6 7h2v7H8v-7zm4 2h2v5h-2v-5z" />
-                        </svg>
-                        CSS
+                        <img src="assets/icons8-aws-logo-512.png" alt="Social Media" width="50">
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <!-- Heroicon JavaScript -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h8v2H4v-2z" />
-                        </svg>
-                        JavaScript
+                        <img src="assets/icons8-codeigniter-is-an-open-source-software-rapid-development-web-framework-96.png"
+                            alt="Social Media" width="50">
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <!-- Heroicon Python -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 9v3h6v6h8v-6h6V9h-6V5H8v4H2z" />
-                        </svg>
-                        Python
+                        <img src="assets/icons8-flutter-500.png" alt="Social Media" width="50">
                     </h4>
                 </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-git-150.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-golang-500.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-js-100.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-laravel-100.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-mysql-logo-500.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-postgresql-500.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-redis-an-in-memory-data-structure-project-implementing-a-distributed-96.png"
+                            alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-nosql-32.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-figma-500.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-backend-100.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold flex items-center justify-center">
+                        <img src="assets/icons8-tailwind-css-384.png" alt="Social Media" width="50">
+                    </h4>
+                </div>
+
+
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="portfolio-section text-center my-16">
-            <h2 class="text-4xl font-bold">Contact</h2>
-            <p class="mt-4">Feel free to reach out to me via email at <a href="mailto:your.email@example.com" class="link link-primary">your.email@example.com</a>.</p>
-            <a href="mailto:your.email@example.com" class="btn btn-primary mt-6">
+            <h2 class="text-3xl font-bold">Contact</h2>
+            <p class="mt-4">Feel free to reach out to me via email</p>
+            <a href="mailto:elhaqeeem@null.net" class="btn btn-primary mt-6">
                 <!-- Heroicon Mail -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8l-4 4-4-4" />
-                </svg>
-                Contact Me
+                <i class="fa fa-inbox" aria-hidden="true"></i>&nbsp;Contact Me
             </a>
         </section>
     </div>
 
     <!-- Footer -->
-    <footer class="footer bg-base-200 py-4 text-center">
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+
+
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+        <aside>
+            <p>Copyright © <span id="year"></span> - All right reserved by elhaqeeem</p>
+        </aside>
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+        function animateText() {
+            const animatedText = document.querySelector('.animated-text');
+            const textContent = animatedText.textContent;
+            animatedText.textContent = ''; // Kosongkan teks asli
+
+            // Membuat elemen huruf
+            textContent.split('').forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.className = 'letter'; // Tambahkan kelas huruf
+                animatedText.appendChild(span);
+
+                // Tambahkan animasi dengan penundaan
+                setTimeout(() => {
+                    span.style.opacity = 1;
+                    span.style.transform = 'translateY(0)';
+                }, index * 100); // Atur penundaan
+            });
+
+            // Mengulangi animasi setelah selesai
+            setTimeout(() => {
+                const letters = document.querySelectorAll('.letter');
+                letters.forEach((letter) => {
+                    letter.style.opacity = 0;
+                    letter.style.transform = 'translateY(20px)';
+                });
+                // Menjalankan animasi lagi setelah beberapa detik
+                setTimeout(animateText, 1000); // Atur delay sebelum animasi diulang
+            }, textContent.length * 100 + 500); // Menghitung waktu total animasi
+        }
+
+        // Memulai animasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', animateText);
+    </script>
+
 </body>
+
 </html>
