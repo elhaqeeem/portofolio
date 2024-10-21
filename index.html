@@ -19,73 +19,61 @@
       }
     </script>
     <script src="https://unpkg.com/htmx.org@1.9.0"></script>
-
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            padding-top: 50px;
-            background-color: #1f2937; /* dark background */
-        }
-        .portfolio-section {
-            margin: 20px 0;
-        }
-        .project-card {
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar bg-base-200 fixed-top">
+    <nav class="navbar bg-base-100 shadow-lg fixed top-0 z-50">
         <div class="container mx-auto">
             <div class="navbar-start">
-                <a class="text-lg font-bold" href="#">My Portfolio</a>
+                <a class="text-3xl font-bold text-primary" href="#">Portfolio</a>
             </div>
-            <div class="navbar-end">
+            <div class="navbar-end hidden md:flex">
                 <ul class="menu menu-horizontal p-0">
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#projects" class="btn btn-ghost">Projects</a></li>
+                    <li><a href="#skills" class="btn btn-ghost">Skills</a></li>
+                    <li><a href="#contact" class="btn btn-ghost">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 mt-24">
         <!-- Hero Section -->
-        <section class="hero text-center my-12">
-            <h1 class="text-4xl font-bold">Hello, I'm <span class="text-primary">Your Name</span></h1>
-            <p class="text-xl">A passionate web developer specialized in building amazing websites and web applications.</p>
+        <section class="hero bg-primary text-primary-content py-16 rounded-lg text-center">
+            <div class="hero-content">
+                <h1 class="text-5xl font-bold">Hello, I'm <span class="text-accent">Your Name</span></h1>
+                <p class="text-xl mt-4">A passionate web developer specialized in building amazing websites and web applications.</p>
+                <a href="#projects" class="btn btn-accent mt-6">See My Work</a>
+            </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="portfolio-section">
-            <h2 class="text-2xl font-bold text-center">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div class="card project-card" hx-get="project1.html" hx-target="#projectDetails" hx-swap="outerHTML">
+        <section id="projects" class="portfolio-section my-16">
+            <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card shadow-lg">
                     <figure><img src="project1-thumbnail.jpg" alt="Project 1"></figure>
                     <div class="card-body">
                         <h3 class="card-title">Project 1</h3>
                         <p>A short description of project 1.</p>
+                        <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-                <div class="card project-card" hx-get="project2.html" hx-target="#projectDetails" hx-swap="outerHTML">
+                <div class="card shadow-lg">
                     <figure><img src="project2-thumbnail.jpg" alt="Project 2"></figure>
                     <div class="card-body">
                         <h3 class="card-title">Project 2</h3>
                         <p>A short description of project 2.</p>
+                        <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-                <div class="card project-card" hx-get="project3.html" hx-target="#projectDetails" hx-swap="outerHTML">
+                <div class="card shadow-lg">
                     <figure><img src="project3-thumbnail.jpg" alt="Project 3"></figure>
                     <div class="card-body">
                         <h3 class="card-title">Project 3</h3>
                         <p>A short description of project 3.</p>
+                        <a href="#projectDetails" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -95,26 +83,35 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="portfolio-section">
-            <h2 class="text-2xl font-bold text-center">Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-6">
-                <div><h4 class="text-xl">HTML</h4></div>
-                <div><h4 class="text-xl">CSS</h4></div>
-                <div><h4 class="text-xl">JavaScript</h4></div>
-                <div><h4 class="text-xl">Python</h4></div>
+        <section id="skills" class="portfolio-section my-16">
+            <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold">HTML</h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold">CSS</h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold">JavaScript</h4>
+                </div>
+                <div class="card shadow-md bg-neutral text-neutral-content p-4">
+                    <h4 class="text-xl font-bold">Python</h4>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="portfolio-section text-center">
-            <h2 class="text-2xl font-bold">Contact</h2>
-            <p>Feel free to reach out to me via email at <a href="mailto:your.email@example.com" class="link link-primary">your.email@example.com</a>.</p>
+        <section id="contact" class="portfolio-section text-center my-16">
+            <h2 class="text-4xl font-bold">Contact</h2>
+            <p class="mt-4">Feel free to reach out to me via email at <a href="mailto:your.email@example.com" class="link link-primary">your.email@example.com</a>.</p>
+            <a href="mailto:your.email@example.com" class="btn btn-primary mt-6">Contact Me</a>
         </section>
     </div>
 
-    <footer class="text-center py-4">
+    <!-- Footer -->
+    <footer class="footer bg-base-200 py-4 text-center">
         <p>&copy; 2024 Your Name. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
