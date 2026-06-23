@@ -1,74 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Web Developer Portfolio</title>
-    <link rel="icon" href="assets/letter-e.ico" type="image/x-icon">
+    <link rel="icon" href="assets/letter-e.ico" type="image/x-icon" />
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MK8869NF');</script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-MK8869NF");
+    </script>
     <!-- End Google Tag Manager -->
-     <!-- Deskripsi untuk SEO -->
-     <meta name="description" content="Portfolio web developer yang menampilkan proyek, keterampilan, dan pengalaman saya. Temukan karya terbaik saya di sini.">
-    
-     <!-- Kata kunci untuk SEO -->
-     <meta name="keywords" content="web developer, portfolio, proyek web, keterampilan, HTML, CSS, JavaScript">
-     
-     <!-- Penulis halaman -->
-     <meta name="author" content="elhaqeeem">
-     <!-- URL kanonis untuk menghindari duplikat -->
-    <link rel="canonical" href="https://www.example.com/portfolio">
+    <!-- Deskripsi untuk SEO -->
+    <meta name="description"
+        content="Portfolio web developer yang menampilkan proyek, keterampilan, dan pengalaman saya. Temukan karya terbaik saya di sini." />
+
+    <!-- Kata kunci untuk SEO -->
+    <meta name="keywords" content="web developer, portfolio, proyek web, keterampilan, HTML, CSS, JavaScript" />
+
+    <!-- Penulis halaman -->
+    <meta name="author" content="elhaqeeem" />
+    <!-- URL kanonis untuk menghindari duplikat -->
+    <link rel="canonical" href="https://www.example.com/portfolio" />
 
     <!-- Open Graph untuk sosial media -->
-    <meta property="og:title" content="My Web Developer Portfolio">
-    <meta property="og:description" content="Portfolio web developer yang menampilkan proyek, keterampilan, dan pengalaman saya. Temukan karya terbaik saya di sini.">
-    <meta property="og:image" content="https://www.example.com/image.jpg">
-    <meta property="og:url" content="https://www.example.com/portfolio">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Web Developer Portfolio" />
+    <meta property="og:description"
+        content="Portfolio web developer yang menampilkan proyek, keterampilan, dan pengalaman saya. Temukan karya terbaik saya di sini." />
+    <meta property="og:image" content="https://www.example.com/image.jpg" />
+    <meta property="og:url" content="https://www.example.com/portfolio" />
+    <meta property="og:type" content="website" />
 
     <!-- Twitter Card untuk Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="My Web Developer Portfolio">
-    <meta name="twitter:description" content="Portfolio web developer yang menampilkan proyek, keterampilan, dan pengalaman saya. Temukan karya terbaik saya di sini.">
-    <meta name="twitter:image" content="https://www.example.com/image.jpg">
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="My Web Developer Portfolio" />
+    <meta name="twitter:description"
+        content="Portfolio web developer yang menampilkan proyek, keterampilan, dan pengalaman saya. Temukan karya terbaik saya di sini." />
+    <meta name="twitter:image" content="https://www.example.com/image.jpg" />
+
     <!-- Tambahkan Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <!-- Tambahkan DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
 
     <!-- Konfigurasi Tema -->
     <style>
         .animated-text {
-            display: inline-block; /* Memastikan teks dapat diatur per karakter */
+            display: inline-block;
+            /* Memastikan teks dapat diatur per karakter */
         }
 
         .letter {
-            display: inline-block; /* Agar setiap huruf dapat diatur secara individual */
-            opacity: 0; /* Mulai dengan opacity 0 */
-            transform: translateY(20px); /* Mulai sedikit lebih rendah */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk efek */
+            display: inline-block;
+            /* Agar setiap huruf dapat diatur secara individual */
+            opacity: 0;
+            /* Mulai dengan opacity 0 */
+            transform: translateY(20px);
+            /* Mulai sedikit lebih rendah */
+            transition:
+                opacity 0.5s ease,
+                transform 0.5s ease;
+            /* Transisi untuk efek */
         }
 
         /* Untuk memusatkan teks */
         .text-center {
-            text-align: center; /* Memusatkan teks */
+            text-align: center;
+            /* Memusatkan teks */
         }
-        
+
         .max-w-md {
-            max-width: 600px; /* Atur lebar maksimum sesuai kebutuhan */
-            margin: 0 auto; /* Memusatkan div secara horizontal */
-            padding: 20px; /* Menambahkan padding untuk estetika */
+            max-width: 600px;
+            /* Atur lebar maksimum sesuai kebutuhan */
+            margin: 0 auto;
+            /* Memusatkan div secara horizontal */
+            padding: 20px;
+            /* Menambahkan padding untuk estetika */
         }
 
         .text-accent {
-            color: #4892d3; /* Mengatur warna teks aksen (ubah sesuai kebutuhan) */
+            color: #4892d3;
+            /* Mengatur warna teks aksen (ubah sesuai kebutuhan) */
         }
     </style>
 
@@ -78,8 +100,8 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK8869NF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK8869NF" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Sticky Navbar -->
     <nav class="navbar sticky top-0 z-30 bg-neutral">
@@ -87,7 +109,7 @@
             <div class="navbar-start">
                 <a class="text-3xl font-bold text-accent flex items-center" href="#">
                     <!-- Heroicon Home -->
-                    <img src="assets/letter-e.png" alt="Logo" width="30">
+                    <img src="assets/letter-e.png" alt="Logo" width="30" />
                     Portfolio
                 </a>
             </div>
@@ -125,16 +147,13 @@
 
     <!-- JavaScript for toggling the mobile menu -->
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
         });
     </script>
-
-
-
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 mt-24">
@@ -143,9 +162,13 @@
         <div class="hero bg-base-200 min-h-screen">
             <div class="hero-content text-center">
                 <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Hello, I'm <span class="text-accent animated-text">Lukmanul&nbsp;Hakim</span></h1>
+                    <h1 class="text-5xl font-bold">
+                        Hello, I'm
+                        <span class="text-accent animated-text">Lukmanul&nbsp;Hakim</span>
+                    </h1>
                     <p class="py-6">
-                        A passionate full stack developer specialized in building amazing websites, web applications & mobile applications.
+                        A passionate full stack developer specialized in building amazing
+                        websites, web applications & mobile applications.
                     </p>
                     <a href="#projects" class="btn btn-accent mt-6">See My Work</a>
                 </div>
@@ -153,18 +176,18 @@
             <!-- Embed the snake SVG with transparency -->
             <div class="mt-12">
                 <img src="https://raw.githubusercontent.com/shahradelahi/shahradelahi/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only"
-                    alt="GitHub Contribution Snake" class="mx-auto" width="5000" style="opacity: 0.2;">
+                    alt="GitHub Contribution Snake" class="mx-auto" width="5000" style="opacity: 0.2" />
             </div>
         </div>
-
-
 
         <!-- Projects Section -->
         <section id="projects" class="portfolio-section my-16">
             <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="card shadow-lg">
-                    <figure><img src="assets/3d-model.png" width="100" alt="Project 1"></figure>
+                    <figure>
+                        <img src="assets/letter-e.png" width="100" alt="Project 1" />
+                    </figure>
                     <div class="card-body">
                         <h3 class="card-title flex items-center">
                             <!-- Heroicon Code -->
@@ -176,11 +199,15 @@
                             Learning Management System
                         </h3>
                         <p></p>
-                        <a href="#projectDetails" class="btn btn-primary">Learn More</a>
+                        <button onclick="openProject('lms')" class="btn btn-primary">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 <div class="card shadow-lg">
-                    <figure><img src="assets/3d-model.png" width="100" alt="Project 1"></figure>
+                    <figure>
+                        <img src="assets/letter-a (1).png" width="100" alt="Project 1" />
+                    </figure>
                     <div class="card-body">
                         <h3 class="card-title flex items-center">
                             <!-- Heroicon Code -->
@@ -192,11 +219,15 @@
                             Aclmod
                         </h3>
                         <p></p>
-                        <a href="#projectDetails" class="btn btn-primary">Learn More</a>
+                        <button onclick="openProject('aclmod')" class="btn btn-primary">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 <div class="card shadow-lg">
-                    <figure><img src="assets/3d-model.png" width="100" alt="Project 2"></figure>
+                    <figure>
+                        <img src="assets/letter-s.png" width="100" alt="Project 2" />
+                    </figure>
                     <div class="card-body">
                         <h3 class="card-title flex items-center">
                             <!-- Heroicon Code -->
@@ -208,11 +239,15 @@
                             Sipmonas
                         </h3>
                         <p></p>
-                        <a href="#projectDetails" class="btn btn-primary">Learn More</a>
+                        <button onclick="openProject('sipmonas')" class="btn btn-primary">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 <div class="card shadow-lg">
-                    <figure><img src="assets/3d-model.png" width="100" alt="Project 3"></figure>
+                    <figure>
+                        <img src="assets/alphabetical-letters.png" width="100" alt="Project 3" />
+                    </figure>
                     <div class="card-body">
                         <h3 class="card-title flex items-center">
                             <!-- Heroicon Star -->
@@ -224,7 +259,29 @@
                             Siap
                         </h3>
                         <p></p>
-                        <a href="#projectDetails" class="btn btn-primary">Learn More</a>
+                        <button onclick="openProject('siap')" class="btn btn-primary">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="card shadow-lg">
+                    <figure>
+                        <img src="assets/k.png" width="100" alt="Project 3" />
+                    </figure>
+                    <div class="card-body">
+                        <h3 class="card-title flex items-center">
+                            <!-- Heroicon Star -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5.5 12L12 5l6.5 7H18l-6 9-6-9h-.5z" />
+                            </svg>
+                            Karirku
+                        </h3>
+                        <p></p>
+                        <button onclick="openProject('karirku')" class="btn btn-primary">
+                            Learn More
+                        </button>
                     </div>
                 </div>
             </div>
@@ -237,95 +294,92 @@
         <section id="skills" class="portfolio-section my-16">
             <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-8 gap-8 text-center">
-
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
                         <!-- Icon HTML -->
-                        <img src="assets/icons8-react-js-500.png" alt="HTML" width="50">
+                        <img src="assets/icons8-react-js-500.png" alt="HTML" width="50" />
                     </h4>
                 </div>
 
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-php-500.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-php-500.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-aws-logo-512.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-aws-logo-512.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
                         <img src="assets/icons8-codeigniter-is-an-open-source-software-rapid-development-web-framework-96.png"
-                            alt="Social Media" width="50">
+                            alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-flutter-500.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-flutter-500.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-git-150.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-git-150.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-golang-500.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-golang-500.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-js-100.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-js-100.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-laravel-100.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-laravel-100.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-mysql-logo-500.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-mysql-logo-500.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
 
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-postgresql-500.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-postgresql-500.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
 
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
                         <img src="assets/icons8-redis-an-in-memory-data-structure-project-implementing-a-distributed-96.png"
-                            alt="Social Media" width="50">
+                            alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-nosql-32.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-nosql-32.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-figma-500.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-figma-500.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-backend-100.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-backend-100.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
                 <div class="card shadow-md bg-neutral text-neutral-content p-4">
                     <h4 class="text-xl font-bold flex items-center justify-center">
-                        <img src="assets/icons8-tailwind-css-384.png" alt="Social Media" width="50">
+                        <img src="assets/icons8-tailwind-css-384.png" alt="Social Media" width="50" />
                     </h4>
                 </div>
-
-
             </div>
         </section>
 
@@ -342,10 +396,11 @@
 
     <!-- Footer -->
 
-
     <footer class="footer footer-center bg-base-300 text-base-content p-4">
         <aside>
-            <p>Copyright © <span id="year"></span> - All right reserved by elhaqeeem</p>
+            <p>
+                Copyright © <span id="year"></span> - All right reserved by elhaqeeem
+            </p>
         </aside>
     </footer>
 
@@ -355,40 +410,175 @@
 
     <script>
         function animateText() {
-            const animatedText = document.querySelector('.animated-text');
+            const animatedText = document.querySelector(".animated-text");
             const textContent = animatedText.textContent;
-            animatedText.textContent = ''; // Kosongkan teks asli
+            animatedText.textContent = ""; // Kosongkan teks asli
 
             // Membuat elemen huruf
-            textContent.split('').forEach((letter, index) => {
-                const span = document.createElement('span');
+            textContent.split("").forEach((letter, index) => {
+                const span = document.createElement("span");
                 span.textContent = letter;
-                span.className = 'letter'; // Tambahkan kelas huruf
+                span.className = "letter"; // Tambahkan kelas huruf
                 animatedText.appendChild(span);
 
                 // Tambahkan animasi dengan penundaan
                 setTimeout(() => {
                     span.style.opacity = 1;
-                    span.style.transform = 'translateY(0)';
+                    span.style.transform = "translateY(0)";
                 }, index * 100); // Atur penundaan
             });
 
             // Mengulangi animasi setelah selesai
-            setTimeout(() => {
-                const letters = document.querySelectorAll('.letter');
-                letters.forEach((letter) => {
-                    letter.style.opacity = 0;
-                    letter.style.transform = 'translateY(20px)';
-                });
-                // Menjalankan animasi lagi setelah beberapa detik
-                setTimeout(animateText, 1000); // Atur delay sebelum animasi diulang
-            }, textContent.length * 100 + 500); // Menghitung waktu total animasi
+            setTimeout(
+                () => {
+                    const letters = document.querySelectorAll(".letter");
+                    letters.forEach((letter) => {
+                        letter.style.opacity = 0;
+                        letter.style.transform = "translateY(20px)";
+                    });
+                    // Menjalankan animasi lagi setelah beberapa detik
+                    setTimeout(animateText, 1000); // Atur delay sebelum animasi diulang
+                },
+                textContent.length * 100 + 500,
+            ); // Menghitung waktu total animasi
         }
 
         // Memulai animasi saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', animateText);
+        document.addEventListener("DOMContentLoaded", animateText);
     </script>
+    <!-- Project Detail Modal -->
+    <input type="checkbox" id="project-modal" class="modal-toggle" />
 
+    <div class="modal">
+        <div class="modal-box max-w-3xl">
+            <h3 id="modalTitle" class="font-bold text-2xl mb-4"></h3>
+
+            <img id="modalImage" src="" alt="Project Image" class="w-full rounded-lg mb-4" />
+
+            <p id="modalDescription" class="py-2"></p>
+            <div id="modalTech" class="flex flex-wrap gap-2 mt-4"></div>
+            <div class="modal-action">
+                <label for="project-modal" class="btn">Close</label>
+            </div>
+        </div>
+    </div>
+    <script>
+        const projects = {
+            lms: {
+                title: "Learning Management System",
+                image: "assets/letter-e.png",
+                width: "150px",
+                height: "150px",
+                description:
+                    "A comprehensive Learning Management System (LMS) designed to manage online courses, learning materials, assessments, assignments, and student progress tracking. The platform provides an intuitive experience for both educators and learners while supporting scalable educational operations.",
+                tech: [
+                    "Golang",
+                    "PostgreSQL",
+                    "React.js",
+                    "Flutter",
+                    "Redis",
+                    "AWS",
+                    "REST API"
+                ]
+            },
+           aclmod: {
+    title: "Aclmod",
+    image: "assets/letter-a (1).png",
+    width: "200px",
+    height: "200px",
+    description:
+        "A web-based access control and module management platform designed to streamline user authorization, role-based permissions, and master data administration. The system provides a secure and scalable solution for managing application modules, user roles, and organizational access policies across web and mobile environments.",
+    tech: [
+        ".NET",
+        "SQL Server",
+        "React.js",
+        "Flutter",
+        "REST API",
+        "JWT Authentication"
+    ]
+},
+            sipmonas: {
+    title: "Sipmonas",
+    image: "assets/letter-s.png",
+    width: "180px",
+    height: "180px",
+    description:
+        "A national monitoring information system designed to track project execution, performance indicators, and reporting activities in real time. The platform provides centralized monitoring capabilities, enabling organizations to improve transparency, streamline reporting processes, and support data-driven decision-making through comprehensive dashboards and analytics.",
+    tech: [
+        "CodeIgniter",
+        "MySQL",
+        "Bootstrap",
+        "jQuery",
+        "REST API"
+    ]
+},
+           siap: {
+    title: "Siap",
+    image: "assets/alphabetical-letters.png",
+    width: "220px",
+    height: "220px",
+    description:
+        "An integrated administrative and service management solution developed to support digital transformation within organizations. The platform centralizes data processing, automates operational workflows, and enhances service delivery through a secure and scalable web-based environment.",
+    tech: [
+        "CodeIgniter",
+        "MySQL"
+    ]
+},
+            karirku: {
+    title: "Karirku",
+    image: "assets/k.png",
+    width: "160px",
+    height: "160px",
+    description:
+        "An end-to-end career development ecosystem that empowers users to discover job opportunities, enhance professional skills, and manage their career growth. The platform delivers real-time communication, personalized career services, training management, and cross-platform accessibility through modern web and mobile technologies.",
+    tech: [
+        "FastAPI",
+        "Python",
+        "MongoDB",
+        "Laravel",
+        "Flutter",
+        "Firebase",
+        "WebSocket",
+        "REST API",
+        "Real-time Messaging",
+        "Push Notifications",
+        "JWT Authentication",
+        "Docker"
+    ]
+},
+        };
+
+        function openProject(projectKey) {
+            const project = projects[projectKey];
+
+            if (!project) return;
+
+            document.getElementById("modalTitle").textContent = project.title;
+
+            const img = document.getElementById("modalImage");
+            img.src = project.image;
+            img.alt = project.title;
+            img.style.width = project.width;
+            img.style.height = project.height;
+            img.style.objectFit = "contain";
+
+            document.getElementById("modalDescription").textContent =
+                project.description;
+
+            const techContainer = document.getElementById("modalTech");
+            techContainer.innerHTML = "";
+
+            project.tech.forEach(tech => {
+                techContainer.innerHTML += `
+            <span class="badge badge-primary badge-lg">
+                ${tech}
+            </span>
+        `;
+            });
+
+            document.getElementById("project-modal").checked = true;
+        }
+    </script>
 </body>
 
 </html>
